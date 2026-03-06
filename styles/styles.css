@@ -67,7 +67,7 @@ margin-top:15px;
 
 .content
 {
-width:58%;
+width:500px;
 display:inline-block;
 vertical-align:top;
 background:#f4e1b9;
@@ -91,6 +91,7 @@ font-size:14px;
 line-height:1.6;
 text-align:justify;
 color:#333;
+
 }
 
 .sidebar p
