@@ -1,83 +1,158 @@
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #f5f5f0;
+  color: #333;
+  min-height: 100vh;
 }
 
-h1, h2 {
-    color: #333;
+
+h1, h2, p {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #555;
-    text-align: justify;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ddd;
+  padding: 14px 40px;
 }
+
+header h1 {
+  font-size: 1.3rem;
+  color: #444;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #333;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-    display: inline;
+  display: inline-block;
+  margin-left: 6px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 15px 20px;
-    display: inline-block;
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-nav ul li a:hover {
-    background-color: #575757;
+
+nav a:hover {
+  background-color: #5b8dee;
+  color: #ffffff;
 }
 
+nav ul li:first-child a {
+  background-color: #5b8dee;
+  color: #ffffff;
+}
+
+
+.description {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 14px 40px;
+}
+
+/* HİYERARŞİK SEÇİCİ #2: .description p */
+.description p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.description .highlight {
+  color: #c0392b;
+  font-style: italic;
+}
 main {
-    display: flex;
-    margin: 20px;
-}
-
-.content, .sidebar {
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ddd;
-    margin-right: 20px;
+  display: flex;
+  gap: 20px;
+  padding: 24px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .content {
-    flex: 2;
+  flex: 1;
+  background-color: #fffde7;
+  border: 1px solid #f0d97a;
+  border-radius: 6px;
+  padding: 20px 22px;
+}
+
+.content h2 {
+  font-size: 1.05rem;
+  color: #5a4200;
+  border-bottom: 1px solid #e8c947;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+.content p {
+  font-size: 0.88rem;
+  color: #4a4a2a;
+  line-height: 1.8;
+  text-align: left;
+  margin-bottom: 12px;
 }
 
 .sidebar {
-    flex: 1;
+  flex: 1;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+  padding: 20px 22px;
+}
+
+.sidebar h2 {
+  font-size: 1.05rem;
+  color: #1b5e20;
+  border-bottom: 1px solid #81c784;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+/* HİYERARŞİK SEÇİCİ #4: .sidebar p */
+.sidebar p {
+  font-size: 0.88rem;
+  color: #2e4a30;
+  line-height: 1.8;
+  text-align: left;
+  margin-bottom: 12px;
 }
 
 footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 16px 40px;
+  margin-top: auto;
 }
-
-nav a {
-    color: #fff;
-}
-
-.content p, .sidebar p {
-    font-size: 14px;
-    color: #666;
-}
-
-h1, h2, p {
-    text-align: center;
+footer p {
+  font-size: 0.82rem;
+  color: #888;
+  text-align: center;
+  line-height: 1.5;
 }
