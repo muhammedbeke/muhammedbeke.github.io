@@ -1,111 +1,83 @@
-body{
-background:#e9e9ec;
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.container{
-width:900px;
-margin:40px auto;
-background:white;
-border:1px solid #ccc;
-border-radius:6px;
-padding:20px;
+h1, h2 {
+    color: #333;
 }
 
-header{
-border-bottom:1px solid #ccc;
-padding-bottom:10px;
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    text-align: justify;
 }
 
-header h1{
-margin:0;
-font-size:22px;
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    text-align: center;
 }
 
-
-nav ul{
-list-style:none;
-padding:0;
-margin:10px 0 0 0;
+nav ul li {
+    display: inline;
 }
 
-nav ul li{
-display:inline-block;
-margin-right:8px;
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: inline-block;
 }
 
-nav a{
-text-decoration:none;
-background:#6f87b1;
-color:white;
-padding:6px 12px;
-border-radius:4px;
-font-size:13px;
+nav ul li a:hover {
+    background-color: #575757;
 }
 
-nav a:hover{
-background:#4e6289;
+main {
+    display: flex;
+    margin: 20px;
 }
 
-
-.intro{
-margin-top:15px;
-font-size:14px;
-line-height:1.6;
-color:#444;
+.content, .sidebar {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-right: 20px;
 }
 
-
-main{
-margin-top:20px;
+.content {
+    flex: 2;
 }
 
-/* sol kutu */
-
-.content{
-display:inline-block;
-width:58%;
-background:#f2e4c7;
-border:1px solid #d4c4a3;
-padding:15px;
-border-radius:4px;
-vertical-align:top;
+.sidebar {
+    flex: 1;
 }
 
-.content p{
-font-size:14px;
-line-height:1.6;
-color:#333;
-text-align:justify;
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-
-
-aside{
-display:inline-block;
-width:38%;
-background:#dbe6ec;
-border:1px solid #b9c9d3;
-padding:15px;
-border-radius:4px;
-vertical-align:top;
-margin-left:2%;
+nav a {
+    color: #fff;
 }
 
-aside p{
-font-size:14px;
-line-height:1.6;
-color:#333;
+.content p, .sidebar p {
+    font-size: 14px;
+    color: #666;
 }
 
-
-
-footer{
-margin-top:20px;
-border-top:1px solid #ccc;
-padding-top:10px;
-text-align:center;
-font-size:12px;
-color:#666;
+h1, h2, p {
+    text-align: center;
 }
