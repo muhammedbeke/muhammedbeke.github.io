@@ -1,90 +1,111 @@
-h1, p {
-    font-family: Arial, sans-serif;
+body{
+background:#e9e9ec;
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
 }
 
-body{
-    background:#f0f0f0;
-    margin:0;
+.container{
+width:900px;
+margin:40px auto;
+background:white;
+border:1px solid #ccc;
+border-radius:6px;
+padding:20px;
 }
 
 header{
-    background:#e6e9ef;
-    padding:20px;
-    border-bottom:1px solid #bbb;
+border-bottom:1px solid #ccc;
+padding-bottom:10px;
 }
 
 header h1{
-    margin:0;
+margin:0;
+font-size:22px;
 }
 
-header p{
-    font-size:14px;
-}
 
 nav ul{
-    list-style:none;
-    padding:0;
-    margin:10px 0 0 0;
+list-style:none;
+padding:0;
+margin:10px 0 0 0;
 }
 
 nav ul li{
-    display:inline-block;
-    margin-right:10px;
+display:inline-block;
+margin-right:8px;
 }
 
 nav a{
-    text-decoration:none;
-    background:#5c6f91;
-    color:white;
-    padding:8px 12px;
-    border-radius:4px;
+text-decoration:none;
+background:#6f87b1;
+color:white;
+padding:6px 12px;
+border-radius:4px;
+font-size:13px;
 }
 
 nav a:hover{
-    background:#2e3d5c;
+background:#4e6289;
 }
+
+
+.intro{
+margin-top:15px;
+font-size:14px;
+line-height:1.6;
+color:#444;
+}
+
 
 main{
-    width:900px;
-    margin:20px auto;
+margin-top:20px;
 }
+
+/* sol kutu */
 
 .content{
-    display:inline-block;
-    width:58%;
-    background:#f4e4c5;
-    padding:15px;
-    border:1px solid #d2c29e;
-    vertical-align:top;
-}
-
-aside{
-    display:inline-block;
-    width:38%;
-    background:#d9e5ec;
-    padding:15px;
-    border:1px solid #b7c7d1;
-    vertical-align:top;
+display:inline-block;
+width:58%;
+background:#f2e4c7;
+border:1px solid #d4c4a3;
+padding:15px;
+border-radius:4px;
+vertical-align:top;
 }
 
 .content p{
-    font-size:15px;
-    color:#333;
-    line-height:1.6;
-    text-align:justify;
+font-size:14px;
+line-height:1.6;
+color:#333;
+text-align:justify;
+}
+
+
+
+aside{
+display:inline-block;
+width:38%;
+background:#dbe6ec;
+border:1px solid #b9c9d3;
+padding:15px;
+border-radius:4px;
+vertical-align:top;
+margin-left:2%;
 }
 
 aside p{
-    font-size:14px;
-    color:#444;
-    line-height:1.5;
-    text-align:left;
+font-size:14px;
+line-height:1.6;
+color:#333;
 }
 
+
+
 footer{
-    text-align:center;
-    padding:15px;
-    font-size:13px;
-    color:#666;
-    border-top:1px solid #ccc;
+margin-top:20px;
+border-top:1px solid #ccc;
+padding-top:10px;
+text-align:center;
+font-size:12px;
+color:#666;
 }
