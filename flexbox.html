@@ -1,73 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flexbox Örneği</title>
-  <link rel="stylesheet" href="styles/flexbox.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Temel Flexbox Örneği</title>
+  <link rel="stylesheet" href="styles/flexbox.css" />
 </head>
 <body>
   <div class="wrapper">
-    <nav class="navbar">
+    <!-- 1) Navbar -->
+    <header class="navbar">
       <div class="logo">LOGO</div>
-      <div class="links">
+      <nav class="nav-links">
         <a href="#">Ana Sayfa</a>
         <a href="#">Hakkında</a>
         <a href="#">Dersler</a>
         <a href="#">İletişim</a>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
+    <!-- 2) Hero -->
     <section class="hero">
-      <div class="hero-text">
+      <div class="hero-left">
         <h1>Hero Başlık</h1>
-        <p>Açıklama metni: Flexbox ile yatay/dikey hizalama, direction ve stretch davranışı gösterimi.</p>
+        <p class="lead">Açıklama metni. Burada kısa bir tanıtım veya çağrı yer alır.</p>
         <button class="btn">Buton</button>
       </div>
-      <div class="hero-image" aria-hidden="true">Görsel Kutusu</div>
+      <div class="hero-right">
+        <div class="placeholder-img">Görsel</div>
+      </div>
     </section>
 
-    <section class="cards">
-      <article class="card">
-        <h3>Kart Başlığı</h3>
-        <p>Kısa açıklama</p>
-        <button class="btn small">Buton</button>
-      </article>
-      <article class="card">
-        <h3>Kart Başlığı</h3>
-        <p>Kısa açıklama</p>
-        <button class="btn small">Buton</button>
-      </article>
-      <article class="card">
-        <h3>Kart Başlığı</h3>
-        <p>Kısa açıklama</p>
-        <button class="btn small">Buton</button>
-      </article>
-      <article class="card">
-        <h3>Kart Başlığı</h3>
-        <p>Kısa açıklama</p>
-        <button class="btn small">Buton</button>
-      </article>
-      <article class="card">
-        <h3>Kart Başlığı</h3>
-        <p>Kısa açıklama</p>
-        <button class="btn small">Buton</button>
-      </article>
-      <article class="card">
-        <h3>Kart Başlığı</h3>
-        <p>Kısa açıklama</p>
-        <button class="btn small">Buton</button>
-      </article>
+    <!-- 3) Kartlar Bölümü -->
+    <section class="cards-section">
+      <h2 class="section-title">Kartlar Bölümü</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn small">Buton</button>
+        </article>
+        <article class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn small">Buton</button>
+        </article>
+        <article class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn small">Buton</button>
+        </article>
+        <article class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn small">Buton</button>
+        </article>
+        <article class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn small">Buton</button>
+        </article>
+        <article class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn small">Buton</button>
+        </article>
+      </div>
     </section>
 
-    <section class="flex-grow">
-      <div class="box box1">1 Kutu</div>
-      <div class="box box2">2 Kutu</div>
-      <div class="box box3">3 Kutu</div>
+    <!-- 4) Flex Grow Uygulama -->
+    <section class="grow-section">
+      <h2 class="section-title">Flex Grow Uygulama</h2>
+      <div class="grow-row">
+        <div class="grow-box">1 Kutu <button class="btn tiny">Buton</button></div>
+        <div class="grow-box">2 Kutu <button class="btn tiny">Buton</button></div>
+        <div class="grow-box">3 Kutu <button class="btn tiny">Buton</button></div>
+      </div>
     </section>
 
+    <!-- 5) Footer -->
     <footer class="footer">
-      © 2026 - Temel Flexbox Örneği
+      <p>© 2026 - Temel Flexbox Örneği</p>
     </footer>
   </div>
 </body>
