@@ -1,94 +1,164 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* ş */
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    background: #ddd;
-    padding: 0 20px;
-  }
-  .links a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: #333;
-  }
-  
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: #fafafa;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 24px;
+  background: #e6eef8;
+  border-bottom: 1px solid #d0dbe6;
+}
+.logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #0b3b66;
+  font-weight: 600;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 30vh;
+  padding: 18px;
+  gap: 16px;
+  background: #f3f7fb;
+}
+.hero-text {
+  flex: 1 1 55%;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.hero-text h1 {
+  font-size: 1.6rem;
+  color: #073b5a;
+}
+.hero-text p {
+  color: #334e63;
+}
+.hero-image {
+  flex: 1 1 40%;
+  background: linear-gradient(135deg,#d0e6f7,#b8dff0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #073b5a;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  height: 30vh;
+  padding: 12px;
+  background: #ffffff;
+  align-items: stretch;
+}
+.card {
+  flex: 1 1 calc(33.333% - 16px);
+  background: #f0f4f8;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(10,20,30,0.04);
+}
+.card h3 {
+  color: #0b3b66;
+  font-size: 1rem;
+}
+.card p {
+  color: #3b5568;
+  font-size: 0.9rem;
+}
+.btn {
+  background: #0b6fb2;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn.small {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+}
+
+.flex-grow {
+  display: flex;
+  height: 20vh;
+  gap: 12px;
+  padding: 12px;
+  background: #f7fbfd;
+  align-items: stretch;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  min-width: 0;
+}
+.box1 { flex-grow: 1; background: #2b7aab; }
+.box2 { flex-grow: 2; background: #2aa876; }
+.box3 { flex-grow: 1; background: #e06b5d; }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background: #e6eef8;
+  border-top: 1px solid #d0dbe6;
+  color: #073b5a;
+}
+
+@media (max-width: 800px) {
   .hero {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    height: 30vh;
-    background: #eee;
+    flex-direction: column;
+    height: auto;
   }
-  .hero-text {
-    flex: 1;
-    padding: 20px;
+  .cards .card {
+    flex: 1 1 calc(50% - 12px);
   }
-  .hero-image {
-    flex: 1;
-    background: #bbb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+@media (max-width: 480px) {
+  .cards .card {
+    flex: 1 1 100%;
   }
-  
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    height: 30vh;
-    padding: 10px;
-    background: #f5f5f5;
+  .links {
+    display: none;
   }
-  .card {
-    flex: 1 1 calc(33% - 20px);
-    background: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-
-  .flex-grow {
-    display: flex;
-    height: 20vh;
-    align-items: stretch;
-  }
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-  }
-  .box1 { flex-grow: 1; background: steelblue; }
-  .box2 { flex-grow: 2; background: seagreen; }
-  .box3 { flex-grow: 1; background: tomato; }
-  
-
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    background: #ddd;
-  }
-  
+}
