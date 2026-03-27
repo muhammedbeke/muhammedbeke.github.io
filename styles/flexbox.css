@@ -1,0 +1,94 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* ş */
+  }
+  
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background: #ddd;
+    padding: 0 20px;
+  }
+  .links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 30vh;
+    background: #eee;
+  }
+  .hero-text {
+    flex: 1;
+    padding: 20px;
+  }
+  .hero-image {
+    flex: 1;
+    background: #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 30vh;
+    padding: 10px;
+    background: #f5f5f5;
+  }
+  .card {
+    flex: 1 1 calc(33% - 20px);
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .flex-grow {
+    display: flex;
+    height: 20vh;
+    align-items: stretch;
+  }
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .box1 { flex-grow: 1; background: steelblue; }
+  .box2 { flex-grow: 2; background: seagreen; }
+  .box3 { flex-grow: 1; background: tomato; }
+  
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background: #ddd;
+  }
+  
