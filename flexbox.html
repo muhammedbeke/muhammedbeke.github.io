@@ -1,87 +1,299 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Temel Flexbox Örneği</title>
-  <link rel="stylesheet" href="styles/flexbox.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Furkan Köksalan - Özgeçmiş</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f1ec;
+      --text: #1a1a1a;
+      --accent: #2563eb;
+      --danger: #dc2626;
+      --border: #c8c3b8;
+      --input-bg: #ffffff;
+      --label: #3a3a3a;
+      --muted: #888;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    /* ── CV header ───────────────────────────────────────────── */
+    .cv-header {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+    .cv-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .cv-header p {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 18px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── Contact container ───────────────────────────────────── */
+    .contact-container {
+      width: 60%;
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 44px 48px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    }
+
+    .contact-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    /* ── Form groups ─────────────────────────────────────────── */
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: var(--label);
+      margin-bottom: 7px;
+      letter-spacing: 0.01em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--input-bg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      margin-bottom: 0;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+
+    textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+    }
+
+    /* ── Radio & Checkbox groups ─────────────────────────────── */
+    .option-box {
+      background: #f8f7f4;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+    }
+
+    .option-box label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .option-box label:last-child { margin-bottom: 0; }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* ── File input ──────────────────────────────────────────── */
+    input[type="file"] {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    button[type="submit"],
+    button[type="reset"] {
+      flex: 1;
+      padding: 14px 24px;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    button[type="submit"] {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    button[type="reset"] {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .contact-container { width: 100%; padding: 28px 20px; }
+      .btn-row { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <div class="wrapper">
-    <!-- 1) Navbar -->
-    <header class="navbar">
-      <div class="logo">LOGO</div>
-      <nav class="nav-links">
-        <a href="#">Ana Sayfa</a>
-        <a href="#">Hakkında</a>
-        <a href="#">Dersler</a>
-        <a href="#">İletişim</a>
-      </nav>
-    </header>
 
-    <!-- 2) Hero -->
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Hero Başlık</h1>
-        <p class="lead">Açıklama metni. Burada kısa bir tanıtım veya çağrı yer alır.</p>
-        <button class="btn">Buton</button>
-      </div>
-      <div class="hero-right">
-        <div class="placeholder-img">Görsel</div>
-      </div>
-    </section>
-
-    <!-- 3) Kartlar Bölümü -->
-    <section class="cards-section">
-      <h2 class="section-title">Kartlar Bölümü</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Kart Başlığı</h3>
-          <p>Kısa açıklama</p>
-          <button class="btn small">Buton</button>
-        </article>
-        <article class="card">
-          <h3>Kart Başlığı</h3>
-          <p>Kısa açıklama</p>
-          <button class="btn small">Buton</button>
-        </article>
-        <article class="card">
-          <h3>Kart Başlığı</h3>
-          <p>Kısa açıklama</p>
-          <button class="btn small">Buton</button>
-        </article>
-        <article class="card">
-          <h3>Kart Başlığı</h3>
-          <p>Kısa açıklama</p>
-          <button class="btn small">Buton</button>
-        </article>
-        <article class="card">
-          <h3>Kart Başlığı</h3>
-          <p>Kısa açıklama</p>
-          <button class="btn small">Buton</button>
-        </article>
-        <article class="card">
-          <h3>Kart Başlığı</h3>
-          <p>Kısa açıklama</p>
-          <button class="btn small">Buton</button>
-        </article>
-      </div>
-    </section>
-
-    <!-- 4) Flex Grow Uygulama -->
-    <section class="grow-section">
-      <h2 class="section-title">Flex Grow Uygulama</h2>
-      <div class="grow-row">
-        <div class="grow-box">1 Kutu <button class="btn tiny">Buton</button></div>
-        <div class="grow-box">2 Kutu <button class="btn tiny">Buton</button></div>
-        <div class="grow-box">3 Kutu <button class="btn tiny">Buton</button></div>
-      </div>
-    </section>
-
-    <!-- 5) Footer -->
-    <footer class="footer">
-      <p>© 2026 - Temel Flexbox Örneği</p>
-    </footer>
+  <!-- Simple CV header -->
+  <div class="cv-header">
+    <h1>Furkan Köksalan</h1>
+    <p>Bilgisayar Mühendisliği Öğrencisi</p>
+    <div class="divider"></div>
   </div>
+
+  <!-- Contact form -->
+  <div class="contact-container">
+    <h2>Detaylı İletişim Formu</h2>
+
+    <form>
+      <!-- Ad Soyad -->
+      <div class="form-group">
+        <label for="adSoyad">Ad Soyad:</label>
+        <input type="text" id="adSoyad" name="adSoyad" placeholder="Örn: Furkan Köksalan" />
+      </div>
+
+      <!-- E-posta -->
+      <div class="form-group">
+        <label for="eposta">E-posta Adresi:</label>
+        <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" />
+      </div>
+
+      <!-- Başvuru Takip Şifresi -->
+      <div class="form-group">
+        <label for="sifre">Başvuru Takip Şifresi:</label>
+        <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin" />
+      </div>
+
+      <!-- İletişim Tercihi (radio) -->
+      <div class="form-group">
+        <label>İletişim Tercihi:</label>
+        <div class="option-box">
+          <label>
+            <input type="radio" name="iletisimTercihi" value="eposta" checked />
+            Bana e-posta ile ulaşın
+          </label>
+          <label>
+            <input type="radio" name="iletisimTercihi" value="telefon" />
+            Bana telefonla ulaşın
+          </label>
+        </div>
+      </div>
+
+      <!-- İlgi Alanları / Yetenekler (checkbox) -->
+      <div class="form-group">
+        <label>İlgi Alanları / Yetenekler:</label>
+        <div class="option-box">
+          <label><input type="checkbox" name="yetenek" value="html" /> HTML</label>
+          <label><input type="checkbox" name="yetenek" value="css" /> CSS</label>
+          <label><input type="checkbox" name="yetenek" value="algoritma" /> Algoritma</label>
+        </div>
+      </div>
+
+      <!-- Konu (select) -->
+      <div class="form-group">
+        <label for="konu">Konu:</label>
+        <select id="konu" name="konu">
+          <option value="" disabled selected>Lütfen bir konu seçin...</option>
+          <option value="is-teklifi">İş Teklifi</option>
+          <option value="soru">Soru</option>
+          <option value="geri-bildirim">Geri Bildirim</option>
+        </select>
+      </div>
+
+      <!-- Dosya Yükle -->
+      <div class="form-group">
+        <label for="dosya">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+        <input type="file" id="dosya" name="dosya" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+      </div>
+
+      <!-- Mesaj -->
+      <div class="form-group">
+        <label for="mesaj">Mesajınız:</label>
+        <textarea id="mesaj" name="mesaj" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-row">
+        <button type="submit">Gönder</button>
+        <button type="reset">Temizle</button>
+      </div>
+    </form>
+  </div>
+
 </body>
 </html>
