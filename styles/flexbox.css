@@ -6,8 +6,8 @@
 
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  color: #222;
   background: #fafafa;
+  color: #222;
 }
 
 .wrapper {
@@ -17,18 +17,19 @@ body {
   min-height: 100vh;
 }
 
+/* navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
   padding: 0 24px;
-  background: #e6eef8;
-  border-bottom: 1px solid #d0dbe6;
+  background: linear-gradient(180deg,#eaf3fb,#dfeff9);
+  border-bottom: 1px solid rgba(10,30,50,0.06);
 }
 .logo {
   font-weight: 700;
-  letter-spacing: 1px;
+  color: #073b5a;
 }
 .links a {
   margin-left: 18px;
@@ -37,23 +38,24 @@ body {
   font-weight: 600;
 }
 
+/* hero */
 .hero {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   height: 30vh;
-  padding: 18px;
   gap: 16px;
+  padding: 18px;
   background: #f3f7fb;
 }
 .hero-text {
   flex: 1 1 55%;
-  padding: 12px 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 12px;
+  padding: 12px 18px;
 }
 .hero-text h1 {
   font-size: 1.6rem;
@@ -73,6 +75,7 @@ body {
   border-radius: 6px;
 }
 
+/* cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -101,6 +104,8 @@ body {
   color: #3b5568;
   font-size: 0.9rem;
 }
+
+/* buttons */
 .btn {
   background: #0b6fb2;
   color: #fff;
@@ -114,6 +119,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* flex grow */
 .flex-grow {
   display: flex;
   height: 20vh;
@@ -135,16 +141,18 @@ body {
 .box2 { flex-grow: 2; background: #2aa876; }
 .box3 { flex-grow: 1; background: #e06b5d; }
 
+/* footer */
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
-  background: #e6eef8;
-  border-top: 1px solid #d0dbe6;
+  background: linear-gradient(180deg,#eaf3fb,#dfeff9);
+  border-top: 1px solid rgba(10,30,50,0.06);
   color: #073b5a;
 }
 
+/* responsive */
 @media (max-width: 800px) {
   .hero {
     flex-direction: column;
