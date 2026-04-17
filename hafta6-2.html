@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Birim Dönüştürücü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+        }
 
+        .container {
+            width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #1e73d8;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #155ab6;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #cfe8d5;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+     <nav>
+        <a href="index.html">Ana Sayfa</a> | 
+        <a href="about.html">Hakkımda</a> | 
+        <a href="interests.html">İlgi Alanlarım</a> | 
+        <a href="contact.html">İletişim</a>
+        <a href="hafta2.html">Lab</a>
+        <a href="flexbox.html">Flexbox</a>
+        <a href="lab5.html">Lab 5</a>
+     <a href="hafta6-1.html">Uygulama 1</a>
+     <a href="haft6-2.html">Uygulama 2</a>
+    </nav>
+
+<div class="container">
+    <h2>Birim Dönüştürücü</h2>
+
+    <label>Değer Giriniz:</label>
+    <input type="number" id="deger" placeholder="Örn: 50">
+
+    <label>Dönüşüm Tipi:</label>
+    <select id="donusum">
+        <option value="cf">Celsius → Fahrenheit</option>
+        <option value="fc">Fahrenheit → Celsius</option>
+        <option value="mk">Metre → Kilometre</option>
+        <option value="km">Kilometre → Metre</option>
+        <option value="kg">Kilogram → Gram</option>
+        <option value="gk">Gram → Kilogram</option>
+    </select>
+
+    <button onclick="donustur()">Hesapla</button>
+
+    <div class="result" id="sonuc">Sonuç: -</div>
+</div>
+
+<script>
+function donustur() {
+    let deger = parseFloat(document.getElementById("deger").value);
+    let tip = document.getElementById("donusum").value;
+    let sonuc;
+
+    if (isNaN(deger)) {
+        alert("Lütfen geçerli bir sayı giriniz!");
+        return;
+    }
+
+    switch (tip) {
+        case "cf":
+            sonuc = (deger * 9/5) + 32;
+            break;
+        case "fc":
+            sonuc = (deger - 32) * 5/9;
+            break;
+        case "mk":
+            sonuc = deger / 1000;
+            break;
+        case "km":
+            sonuc = deger * 1000;
+            break;
+        case "kg":
+            sonuc = deger * 1000;
+            break;
+        case "gk":
+            sonuc = deger / 1000;
+            break;
+    }
+
+    document.getElementById("sonuc").innerText = "Sonuç: " + sonuc.toFixed(3);
+}
+</script>
+
+</body>
+</html>
