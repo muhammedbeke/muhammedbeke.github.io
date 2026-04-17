@@ -1,1 +1,119 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Not Hesaplama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eee;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+   <nav>
+        <a href="index.html">Ana Sayfa</a> | 
+        <a href="about.html">Hakkımda</a> | 
+        <a href="interests.html">İlgi Alanlarım</a> | 
+        <a href="contact.html">İletişim</a>
+        <a href="hafta2.html">Lab</a>
+        <a href="flexbox.html">Flexbox</a>
+        <a href="lab5.html">Lab 5</a>
+     <a href="hafta6-1.html">Uygulama 1</a>
+     <a href="hafta6-2.html">Uygulama 2</a>
+    </nav>
+
+<div class="container">
+    <h2>Öğrenci Not Hesaplama</h2>
+
+    <input type="text" id="ad" placeholder="Ad Soyad">
+    <input type="number" id="vize" placeholder="Vize Notu">
+    <input type="number" id="final" placeholder="Final Notu">
+
+    <button onclick="hesapla()">Hesapla</button>
+
+    <div class="result" id="sonuc"></div>
+</div>
+
+<script>
+function harfNotuHesapla(ortalama) {
+    if (ortalama >= 90) return "AA";
+    else if (ortalama >= 85) return "BA";
+    else if (ortalama >= 80) return "BB";
+    else if (ortalama >= 75) return "CB";
+    else if (ortalama >= 70) return "CC";
+    else if (ortalama >= 65) return "DC";
+    else if (ortalama >= 60) return "DD";
+    else if (ortalama >= 50) return "FD";
+    else return "FF";
+}
+
+function hesapla() {
+    let ad = document.getElementById("ad").value;
+    let vize = parseFloat(document.getElementById("vize").value);
+    let final = parseFloat(document.getElementById("final").value);
+
+    if (!ad || isNaN(vize) || isNaN(final)) {
+        alert("Lütfen tüm alanları doldurun!");
+        return;
+    }
+
+    let ortalama = (vize * 0.4) + (final * 0.6);
+    let harf = harfNotuHesapla(ortalama);
+    let durum = ortalama >= 50 ? "Geçti" : "Kaldı";
+
+    document.getElementById("sonuc").innerHTML = `
+        <strong>${ad}</strong><br>
+        Ortalama: ${ortalama.toFixed(2)}<br>
+        Harf Notu: ${harf}<br>
+        Durum: ${durum}
+    `;
+}
+</script>
+
+</body>
+</html>
