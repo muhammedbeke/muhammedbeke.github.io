@@ -1,0 +1,58 @@
+/* ── DARK TEMA ── */
+body.dark-theme {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-theme .bg-light {
+  background-color: #16213e !important;
+}
+
+body.dark-theme .card {
+  background-color: #0f3460;
+  border-color: #1a4a7a;
+  color: #e0e0e0;
+}
+
+body.dark-theme .card .text-muted {
+  color: #a0b4c8 !important;
+}
+
+body.dark-theme .list-group-item {
+  background-color: #0f3460;
+  border-color: #1a4a7a;
+  color: #e0e0e0;
+}
+
+body.dark-theme .form-control,
+body.dark-theme .form-select {
+  background-color: #1a3a5c;
+  border-color: #2a5a8c;
+  color: #e0e0e0;
+}
+
+body.dark-theme .form-control::placeholder {
+  color: #7a9ab8;
+}
+
+body.dark-theme .form-label {
+  color: #b0c4d8;
+}
+
+body.dark-theme footer {
+  background-color: #0a0a1a !important;
+}
+
+/* ── GENEL ── */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+#sonucAlani {
+  transition: all 0.3s ease;
+}
