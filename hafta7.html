@@ -5,56 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WP Lab – Hafta 7</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    /* ── Dark Tema ── */
-    body.dark-theme {
-      background-color: #1a1a2e;
-      color: #e0e0e0;
-    }
-    body.dark-theme .bg-light {
-      background-color: #16213e !important;
-    }
-    body.dark-theme .card {
-      background-color: #0f3460;
-      border-color: #1a4a7a;
-      color: #e0e0e0;
-    }
-    body.dark-theme .card .text-muted {
-      color: #a0b4c8 !important;
-    }
-    body.dark-theme .list-group-item {
-      background-color: #0f3460;
-      border-color: #1a4a7a;
-      color: #e0e0e0;
-    }
-    body.dark-theme .form-control,
-    body.dark-theme .form-select {
-      background-color: #1a3a5c;
-      border-color: #2a5a8c;
-      color: #e0e0e0;
-    }
-    body.dark-theme .form-control::placeholder {
-      color: #7a9ab8;
-    }
-    body.dark-theme .form-label {
-      color: #b0c4d8;
-    }
-    body.dark-theme footer {
-      background-color: #0a0a1a !important;
-    }
-
-    /* ── Kart hover ── */
-    .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
-    }
-    #sonucAlani {
-      transition: all 0.3s ease;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/hafta7.css" />
 </head>
 <body>
 
@@ -111,7 +62,7 @@
     </div>
   </section>
 
-  <!-- ATÖLYE KARTLARI -->
+  <!-- ATÖLYELER / CARDS -->
   <section id="atolyeler" class="py-5">
     <div class="container">
       <h2 class="text-center fw-bold mb-2">Atölye İçerikleri</h2>
@@ -293,6 +244,7 @@
     </div>
   </section>
 
+  <!-- SONUÇ ALANI -->
   <section id="sonuc" class="py-5 bg-light">
     <div class="container">
       <div class="row justify-content-center">
@@ -305,6 +257,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="bg-dark text-white py-4">
     <div class="container text-center">
       <p class="mb-1 small">WP Lab &copy; 2025 – Web Programlama Dersi</p>
@@ -313,107 +266,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const themeBtn = document.getElementById("themeToggleBtn");
-
-    themeBtn.addEventListener("click", function () {
-      document.body.classList.toggle("dark-theme");
-      if (document.body.classList.contains("dark-theme")) {
-        themeBtn.textContent = "Açık Temaya Geç";
-        themeBtn.classList.replace("btn-outline-secondary", "btn-outline-light");
-      } else {
-        themeBtn.textContent = "Koyu Temaya Geç";
-        themeBtn.classList.replace("btn-outline-light", "btn-outline-secondary");
-      }
-    });
-
-    const submitBtn = document.getElementById("submitBtn");
-    const resetBtn  = document.getElementById("resetBtn");
-    const alertBox  = document.getElementById("alertBox");
-    const sonucAlani = document.getElementById("sonucAlani");
-
-    submitBtn.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const adSoyad    = document.getElementById("adSoyad").value.trim();
-      const eposta     = document.getElementById("eposta").value.trim();
-      const bolum      = document.getElementById("bolum").value.trim();
-      const sinif      = document.getElementById("sinif").value;
-      const oturum     = document.getElementById("oturum").value;
-      const katilimTuru = document.getElementById("katilimTuru").value;
-      const mesaj      = document.getElementById("mesaj").value.trim();
-      const kvkk       = document.getElementById("kvkk").checked;
-
-      // Boş alan kontrolü
-      const bos = [];
-      if (!adSoyad)     bos.push("Ad Soyad");
-      if (!eposta)      bos.push("E-posta");
-      if (!bolum)       bos.push("Bölüm");
-      if (!sinif)       bos.push("Sınıf");
-      if (!oturum)      bos.push("Katılmak İstediğiniz Oturum");
-      if (!katilimTuru) bos.push("Katılım Türü");
-      if (!kvkk)        bos.push("KVKK onayı");
-
-      if (bos.length > 0) {
-        alertBox.classList.remove("d-none");
-        alertBox.textContent = "Lütfen şu alanları doldurun: " + bos.join(", ");
-        sonucAlani.innerHTML = "Henüz başvuru özeti oluşturulmadı. Formu doldurduktan sonra sonuç burada görünecek.";
-        sonucAlani.className = "alert alert-info text-center";
-        return;
-      }
-
-      alertBox.classList.add("d-none");
-
-      // Özet kartı oluştur
-      sonucAlani.className = "card shadow border-success";
-      sonucAlani.innerHTML = `
-        <div class="card-header bg-success text-white fw-bold">✅ Başvuru Özeti</div>
-        <div class="card-body">
-          <div class="row g-2">
-            <div class="col-sm-6">
-              <span class="text-muted small">Ad Soyad</span>
-              <p class="fw-bold mb-1">${adSoyad}</p>
-            </div>
-            <div class="col-sm-6">
-              <span class="text-muted small">E-posta</span>
-              <p class="fw-bold mb-1">${eposta}</p>
-            </div>
-            <div class="col-sm-6">
-              <span class="text-muted small">Bölüm</span>
-              <p class="fw-bold mb-1">${bolum}</p>
-            </div>
-            <div class="col-sm-6">
-              <span class="text-muted small">Sınıf</span>
-              <p class="fw-bold mb-1">${sinif}</p>
-            </div>
-            <div class="col-sm-6">
-              <span class="text-muted small">Oturum</span>
-              <p class="fw-bold mb-1">${oturum}</p>
-            </div>
-            <div class="col-sm-6">
-              <span class="text-muted small">Katılım Türü</span>
-              <p class="fw-bold mb-1">${katilimTuru}</p>
-            </div>
-            ${mesaj ? `<div class="col-12"><span class="text-muted small">Mesaj</span><p class="mb-1">${mesaj}</p></div>` : ""}
-          </div>
-        </div>
-        <div class="card-footer text-muted small">Başvurunuz alındı. Etkinlik tarihinde görüşmek üzere!</div>
-      `;
-
-      sonucAlani.scrollIntoView({ behavior: "smooth" });
-    });
-
-    // ── FORMU TEMİZLE ──
-    resetBtn.addEventListener("click", function () {
-      ["adSoyad","eposta","bolum","sinif","oturum","katilimTuru","mesaj"].forEach(id => {
-        const el = document.getElementById(id);
-        el.value = "";
-      });
-      document.getElementById("kvkk").checked = false;
-      alertBox.classList.add("d-none");
-      sonucAlani.className = "alert alert-info text-center";
-      sonucAlani.innerHTML = "Henüz başvuru özeti oluşturulmadı. Formu doldurduktan sonra sonuç burada görünecek.";
-    });
-  </script>
+  <script src="scripts/hafta7.js"></script>
 </body>
 </html>
