@@ -1,4 +1,3 @@
-// ── TEMA DEĞİŞTİRME ──
 const themeBtn = document.getElementById("themeToggleBtn");
 
 themeBtn.addEventListener("click", function () {
@@ -13,7 +12,6 @@ themeBtn.addEventListener("click", function () {
   }
 });
 
-// ── FORM ÖZET OLUŞTURMA ──
 const submitBtn = document.getElementById("submitBtn");
 const resetBtn = document.getElementById("resetBtn");
 const alertBox = document.getElementById("alertBox");
@@ -51,7 +49,6 @@ submitBtn.addEventListener("click", function (event) {
 
   alertBox.classList.add("d-none");
 
-  // Özet kartı
   sonucAlani.className = "card shadow border-success";
   sonucAlani.innerHTML = `
     <div class="card-header bg-success text-white fw-bold">
@@ -98,7 +95,6 @@ submitBtn.addEventListener("click", function (event) {
   sonucAlani.scrollIntoView({ behavior: "smooth" });
 });
 
-// ── FORMU TEMİZLE ──
 resetBtn.addEventListener("click", function () {
   document.getElementById("adSoyad").value    = "";
   document.getElementById("eposta").value     = "";
