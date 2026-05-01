@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlgi Alanlarım | Muhammed Emin Beke</title>
-    <!-- Modern bir görünüm için Google Fonts'tan 'Poppins' ve menü için 'Outfit'/'Playfair' fontlarını ekliyoruz -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Menü için gerekli renk değişkenleri */
         :root {
             --cream: #f7f4ef;
             --ink: #1a1714;
@@ -18,16 +16,14 @@
             --border: #e8e3db;
         }
 
-        /* Genel Ayarlar */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            background: #f0f4f8; /* Daha yumuşak bir arka plan rengi */
+            background: #f0f4f8;
             color: #333;
             line-height: 1.6;
         }
 
-        /* --- Üst Menü (Navigasyon) Stilleri - YENİ TASARIM --- */
         nav {
             font-family: 'Outfit', sans-serif;
             background: rgba(247,244,239,0.9);
@@ -38,7 +34,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            /* Sticky veya Fixed özelliği yok, sayfa ile kayacak */
         }
 
         .nav-brand {
@@ -93,7 +88,6 @@
             .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
         }
 
-        /* Başlık Alanı */
         header {
             background: linear-gradient(135deg, #007acc, #00c6ff);
             color: white;
@@ -109,17 +103,15 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        /* Ana İçerik Alanı */
         main {
             max-width: 850px;
             margin: 3rem auto;
             padding: 2.5rem;
             background: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Daha derin ve yumuşak gölge */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
         }
 
-        /* Bölüm Başlıkları */
         main h2 {
             color: #007acc;
             margin-top: 2rem;
@@ -135,7 +127,6 @@
             margin-top: 0;
         }
 
-        /* Sırasız Listeler (Teknik İlgi Alanları) */
         ul {
             list-style: none;
             padding-left: 0;
@@ -156,7 +147,6 @@
             font-weight: bold;
         }
 
-        /* Sıralı Listeler (Hobilerim) */
         ol {
             padding-left: 20px;
             color: #4a5568;
@@ -172,7 +162,6 @@
             font-weight: 600;
         }
 
-        /* Tanım Listeleri (Favori Teknolojiler) */
         dl {
             background: #f8fafc;
             padding: 1.5rem;
@@ -197,7 +186,6 @@
             font-size: 0.95rem;
         }
 
-        /* Alt Bilgi */
         footer {
             background: #1a1a1a;
             color: #94a3b8;
@@ -207,7 +195,6 @@
             font-size: 0.9rem;
         }
 
-        /* Mobil Uyumluluk */
         @media (max-width: 768px) {
             main {
                 margin: 1.5rem;
