@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -8,12 +7,41 @@
         body {
             font-family: Arial, sans-serif;
             background: #f2f2f2;
-            padding: 30px;
+            margin: 0; /* Menünün kenarlara tam oturması için eklendi */
+            padding: 0; /* Menünün kenarlara tam oturması için eklendi */
         }
+
+        /* --- Şık Navigasyon Menüsü Stilleri --- */
+        nav {
+            background: #1a1a2e;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: #007BFF; /* Sayfadaki butonla uyumlu mavi tonu */
+            transform: translateY(-2px);
+        }
+        /* ------------------------------------- */
 
         .container {
             width: 400px;
-            margin: auto;
+            margin: 40px auto; /* Üstten boşluk bırakarak ortalaması için güncellendi */
             background: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -30,6 +58,7 @@
             margin: 8px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box; /* Kutuların dışarı taşmasını önlemek için */
         }
 
         button {
@@ -55,16 +84,15 @@
     </style>
 </head>
 <body>
-   <nav>
-        <a href="index.html">Ana Sayfa</a> | 
-        <a href="about.html">Hakkımda</a> | 
-        <a href="interests.html">İlgi Alanlarım</a> | 
+    
+    <!-- Linkler arasındaki dik çizgiler (|) kaldırıldı, CSS ile düzenlendi -->
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="about.html">Hakkımda</a>
+        <a href="interests.html">İlgi Alanlarım</a>
         <a href="contact.html">İletişim</a>
-        <a href="hafta2.html">Lab</a>
-        <a href="flexbox.html">Flexbox</a>
-        <a href="lab5.html">Lab 5</a>
-     <a href="hafta6-1.html">Uygulama 1</a>
-     <a href="hafta6-2.html">Uygulama 2</a>
+        <a href="hafta6-1.html">Uygulama 1</a>
+        <a href="hafta6-2.html">Uygulama 2</a>
     </nav>
 
 <div class="container">
