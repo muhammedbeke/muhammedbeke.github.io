@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Temel Ödevi</title>
     <style>
-        /* Genel Sayfa Ayarları */
         body {
-            background-color: #f3f3f8; /* Görseldeki açık mor/gri arka plan */
+            background-color: #f3f3f8; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
@@ -19,7 +18,6 @@
             color: #333;
         }
 
-        /* Ana Kapsayıcı */
         .container {
             background-color: #ffffff;
             width: 100%;
@@ -30,7 +28,6 @@
             overflow: hidden;
         }
 
-        /* Üst Kısım (Header ve Navigasyon) */
         header {
             background-color: #f8f9fa;
             border-bottom: 1px solid #ddd;
@@ -65,13 +62,11 @@
             background-color: #e9ecef;
         }
 
-        /* Aktif Menü Elemanı */
         nav a.active {
-            background-color: #7289da; /* Görseldeki mavi/mor ton */
+            background-color: #7289da;
             color: #ffffff;
         }
 
-        /* Ana İçerik Alanı */
         main {
             padding: 25px;
         }
@@ -87,13 +82,11 @@
             color: #5b73b5;
         }
 
-        /* Sütun Düzeni (Flexbox) */
         .row {
             display: flex;
             gap: 20px;
         }
 
-        /* Sütun Ortak Özellikleri */
         .col {
             flex: 1;
             padding: 20px;
@@ -118,19 +111,16 @@
             margin-bottom: 0;
         }
 
-        /* Sol Sütun (İçerik) */
         .content-box {
-            background-color: #fef4e0; /* Açık sarı/turuncu ton */
+            background-color: #fef4e0; 
             border: 1px solid #f2e2bd;
         }
 
-        /* Sağ Sütun (Yan Menü) */
         .sidebar-box {
-            background-color: #eaf4fb; /* Açık mavi ton */
+            background-color: #eaf4fb; 
             border: 1px solid #c9e0f3;
         }
 
-        /* Alt Bilgi (Footer) */
         footer {
             background-color: #f8f9fa;
             border-top: 1px solid #ddd;
@@ -140,7 +130,6 @@
             color: #777;
         }
 
-        /* Responsive Uyumluluk (Küçük ekranlar için alt alta geçmesi adına) */
         @media (max-width: 768px) {
             .row {
                 flex-direction: column;
@@ -155,7 +144,6 @@
 <body>
 
     <div class="container">
-        <!-- Başlık ve Menü -->
         <header>
             <h1>CSS Temel Ödevi</h1>
             <nav>
@@ -166,21 +154,18 @@
             </nav>
         </header>
 
-        <!-- Orta İçerik -->
         <main>
             <p class="intro-text">
                 Verilen benzer bir düzenle basit bir web sayfası oluşturun. CSS'in temel özelliklerini (<span class="highlight-blue">display, width, height, margin, padding, border, selector</span>) uygulayın. Sadece HTML5 + CSS3 kullanın, hazır framework kullanmak yasak (Bootstrap, Tailwind vb.).
             </p>
 
             <div class="row">
-                <!-- Sol Kutu -->
                 <div class="col content-box">
                     <h2>İçerik</h2>
                     <p>Bu alanda örnek içerik metinleri bulunmaktadır. Css özellikleriyle bu metinler arasında <strong>boşluklar</strong> (line-height) ve hizalamalar (text-align) düzenleriz.</p>
                     <p>Önce CSS ile kutuları / alanları yan yana getirmeyi, ardından alt alta yerleştirmeyi öğrendik. Şimdi ise CSS seçicilerini kullanarak <strong>grup</strong> ve hiyerarşik seçimler yapmayı göreceğiz.</p>
                 </div>
 
-                <!-- Sağ Kutu -->
                 <div class="col sidebar-box">
                     <h2>Yan Menü / Bilgi</h2>
                     <p>Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width), yükseklik (height), kenar boşlukları (margin/padding) ve kenarlık (border) özelliklerini kullanarak düzenleyebiliriz.</p>
@@ -189,7 +174,6 @@
             </div>
         </main>
 
-        <!-- Footer -->
         <footer>
             © 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.
         </footer>
