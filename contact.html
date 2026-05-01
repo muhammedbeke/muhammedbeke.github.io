@@ -5,16 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detaylı İletişim Formu</title>
   <style>
+    /* Genel Sayfa Ayarları */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f0f2f5;
-      padding: 40px 20px;
-      margin: 0;
+      margin: 0; /* Menünün tam üste oturması için margin'i sıfırladık */
+      padding: 0;
     }
 
+    /* --- Üst Menü (Navigasyon) Stilleri --- */
+    nav {
+      background: #1a1a2e; /* Form başlığı ile uyumlu şık koyu renk */
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background-color: #4361ee; /* Formun mavi odaklanma rengi */
+      transform: translateY(-2px);
+    }
+    /* ------------------------------------- */
+
+    /* Form Kapsayıcısı */
     .contact-container {
       width: 600px;            
-      margin: auto;            
+      margin: 40px auto; /* Üstte menüden sonra 40px boşluk bırakarak ortalar */
       padding: 36px 40px;      
       border: 1px solid #d0d5dd;   
       border-radius: 12px;   
@@ -97,7 +129,6 @@
       accent-color: #4361ee;
     }
 
-    /* Dosya yükleme */
     input[type="file"] {
       padding: 6px 10px;
       background-color: #fff;
@@ -156,12 +187,12 @@
 </head>
 <body>
 
-  <!-- Linkler buraya eklendi -->
-  <div style="text-align: center; margin-bottom: 20px;">
+  <!-- Şık Navigasyon Menüsü -->
+  <nav>
     <a href="index.html">Ana Sayfa</a>
     <a href="about.html">Hakkında</a>
     <a href="interests.html">İlgi Alanlarım</a>
-  </div>
+  </nav>
 
   <div class="contact-container">
     <h2>Detaylı İletişim Formu</h2>
@@ -170,7 +201,6 @@
 
       <label for="adSoyad">Ad Soyad:</label>
       <input type="text" id="adSoyad" name="adSoyad" placeholder="Muhammed Emin Beke" required/>
-
 
       <label for="eposta">E-posta Adresi:</label>
       <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" required />
