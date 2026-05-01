@@ -5,141 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Temel Ödevi</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Genel Sayfa Ayarları */
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f0f1f6; 
-            color: #333;
+            background-color: #f3f3f8; /* Görseldeki açık mor/gri arka plan */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
             padding: 20px;
+            box-sizing: border-box;
+            color: #333;
         }
 
+        /* Ana Kapsayıcı */
         .container {
             background-color: #ffffff;
             width: 100%;
             max-width: 900px;
-            border: 1px solid #dcdde2;
+            border: 1px solid #ddd;
             border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             overflow: hidden;
         }
-        
+
+        /* Üst Kısım (Header ve Navigasyon) */
         header {
-            background-color: #f7f8fb;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
-            border-bottom: 1px solid #dcdde2;
         }
 
         header h1 {
-            font-size: 20px;
-            color: #2c3e50;
-            font-weight: bold;
+            margin: 0;
+            font-size: 1.3rem;
+            color: #333;
         }
 
         nav {
             display: flex;
             gap: 15px;
-            align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: #555;
-            font-size: 14px;
+            color: #666;
+            font-size: 0.95rem;
             padding: 6px 12px;
             border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
+            transition: all 0.3s ease;
         }
 
-        nav a.active {
-            background-color: #7b96c6; 
-            color: #ffffff;
-        }
-
-        nav a:hover:not(.active) {
+        nav a:hover {
+            color: #333;
             background-color: #e9ecef;
         }
 
-        main {
-            padding: 30px;
+        /* Aktif Menü Elemanı */
+        nav a.active {
+            background-color: #7289da; /* Görseldeki mavi/mor ton */
+            color: #ffffff;
         }
 
-        /* Açıklama Metni */
-        .description {
-            font-size: 15px;
+        /* Ana İçerik Alanı */
+        main {
+            padding: 25px;
+        }
+
+        .intro-text {
+            font-size: 0.95rem;
             line-height: 1.6;
-            color: #4a4a4a;
-            margin-bottom: 30px;
+            color: #444;
+            margin-bottom: 25px;
         }
 
         .highlight-blue {
-            color: #6a88b5;
+            color: #5b73b5;
         }
 
-        .content-boxes {
+        /* Sütun Düzeni (Flexbox) */
+        .row {
             display: flex;
             gap: 20px;
         }
 
-        .box {
+        /* Sütun Ortak Özellikleri */
+        .col {
             flex: 1;
             padding: 20px;
             border-radius: 6px;
         }
 
-        .box h2 {
-            font-size: 16px;
+        .col h2 {
+            margin-top: 0;
+            font-size: 1.15rem;
             margin-bottom: 15px;
             color: #333;
         }
 
-        .box p {
-            font-size: 14px;
+        .col p {
+            font-size: 0.9rem;
             line-height: 1.6;
-            color: #4a4a4a;
+            color: #444;
             margin-bottom: 15px;
         }
 
-        .box p:last-child {
+        .col p:last-child {
             margin-bottom: 0;
         }
 
-        .content-left {
-            background-color: #fdf3d8; 
-            border: 1px solid #eadcae;
-        }
-        .content-right {
-            background-color: #e6f0f5; 
-            border: 1px solid #c2dce6;
-        }
-        footer {
-            background-color: #f5f6f9;
-            text-align: center;
-            padding: 15px;
-            border-top: 1px solid #dcdde2;
-            font-size: 13px;
-            color: #666;
+        /* Sol Sütun (İçerik) */
+        .content-box {
+            background-color: #fef4e0; /* Açık sarı/turuncu ton */
+            border: 1px solid #f2e2bd;
         }
 
+        /* Sağ Sütun (Yan Menü) */
+        .sidebar-box {
+            background-color: #eaf4fb; /* Açık mavi ton */
+            border: 1px solid #c9e0f3;
+        }
+
+        /* Alt Bilgi (Footer) */
+        footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Responsive Uyumluluk (Küçük ekranlar için alt alta geçmesi adına) */
         @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
             header {
                 flex-direction: column;
-                align-items: flex-start;
                 gap: 15px;
-            }
-            .content-boxes {
-                flex-direction: column;
             }
         }
     </style>
@@ -147,44 +155,41 @@
 <body>
 
     <div class="container">
+        <!-- Başlık ve Menü -->
         <header>
             <h1>CSS Temel Ödevi</h1>
             <nav>
-                <a href="#" class="active">Ana Sayfa</a>
-                <a href="#">Hakkında</a>
+                <a href="index.html" class="active">Ana Sayfa</a>
+                <a href="about.html">Hakkında</a>
                 <a href="#">Hizmetler</a>
-                <a href="#">İletişim</a>
+                <a href="contact.html">İletişim</a>
             </nav>
         </header>
 
+        <!-- Orta İçerik -->
         <main>
-            <p class="description">
+            <p class="intro-text">
                 Verilen benzer bir düzenle basit bir web sayfası oluşturun. CSS'in temel özelliklerini (<span class="highlight-blue">display, width, height, margin, padding, border, selector</span>) uygulayın. Sadece HTML5 + CSS3 kullanın, hazır framework kullanmak yasak (Bootstrap, Tailwind vb.).
             </p>
 
-            <div class="content-boxes">
-                <section class="box content-left">
+            <div class="row">
+                <!-- Sol Kutu -->
+                <div class="col content-box">
                     <h2>İçerik</h2>
-                    <p>
-                        Bu alanda örnek içerik metinleri bulunmaktadır. CSS özellikleriyle bu metinler arasında <strong>boşluklar</strong> (line-height) ve hizalamalar (text-align) düzenleyebiliriz.
-                    </p>
-                    <p>
-                        Önce CSS ile kutuları / alanları yan yana getirmeyi, ardından alt alta yerleştirmeyi öğrendik. Şimdi ise CSS seçicilerini kullanarak <strong>grup</strong> ve hiyerarşik seçimler yapmayı göreceğiz.
-                    </p>
-                </section>
+                    <p>Bu alanda örnek içerik metinleri bulunmaktadır. Css özellikleriyle bu metinler arasında <strong>boşluklar</strong> (line-height) ve hizalamalar (text-align) düzenleriz.</p>
+                    <p>Önce CSS ile kutuları / alanları yan yana getirmeyi, ardından alt alta yerleştirmeyi öğrendik. Şimdi ise CSS seçicilerini kullanarak <strong>grup</strong> ve hiyerarşik seçimler yapmayı göreceğiz.</p>
+                </div>
 
-                <aside class="box content-right">
+                <!-- Sağ Kutu -->
+                <div class="col sidebar-box">
                     <h2>Yan Menü / Bilgi</h2>
-                    <p>
-                        Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width), yükseklik (height), kenar boşlukları (margin/padding) ve kenarlık (border) özelliklerini kullanarak düzenleyebiliriz.
-                    </p>
-                    <p>
-                        Öğrendiklerimizi hiyerarşik ve grup seçicilerle uygulayıp farklı bölümlere stil verebiliriz.
-                    </p>
-                </aside>
+                    <p>Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width), yükseklik (height), kenar boşlukları (margin/padding) ve kenarlık (border) özelliklerini kullanarak düzenleyebiliriz.</p>
+                    <p>Öğrendiklerimizi hiyerarşik ve grup seçicilerle uygulayıp farklı bölümlere stil verebiliriz.</p>
+                </div>
             </div>
         </main>
 
+        <!-- Footer -->
         <footer>
             © 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.
         </footer>
