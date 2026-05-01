@@ -56,8 +56,34 @@
             height: 60px;
             display: flex;
             align-items: center;
-            justify-content: center; /* Logolar silindiği için menüyü ortaladık */
+            justify-content: space-between; /* Logo ve linkleri iki yana ayırır */
         }
+
+        /* --- LOGO CSS KISMI EKLENDİ --- */
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-monogram {
+            width: 32px; height: 32px;
+            background: var(--ink);
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cream);
+        }
+
+        .nav-name {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+        }
+        /* ------------------------------- */
 
         .nav-links {
             display: flex;
@@ -297,8 +323,10 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             nav { padding: 0 1rem; }
+            /* Mobilde alan daralacağı için ismi gizleyip sadece logoyu ve linkleri tutabiliriz */
+            .nav-name { display: none; }
             .nav-links { gap: 5px; }
             .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
             .page { padding: 90px 1rem 60px; }
@@ -310,6 +338,12 @@
 <body>
 
 <nav>
+    <!-- LOGO KISMI EKLENDİ -->
+    <a href="index.html" class="nav-brand">
+        <div class="nav-monogram">ME</div>
+        <span class="nav-name">Muhammed Emin Beke</span>
+    </a>
+    
     <div class="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="about.html">Hakkımda</a>
