@@ -2,50 +2,223 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlgi Alanlarım</title>
+    <!-- Modern bir görünüm için Google Fonts'tan 'Poppins' fontunu ekliyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: #f0f4f8; /* Daha yumuşak bir arka plan rengi */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Başlık Alanı */
+        header {
+            background: linear-gradient(135deg, #007acc, #00c6ff);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Navigasyon (Menü) */
+        nav {
+            background: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Linkler arası boşluk */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: #00c6ff;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Ana İçerik Alanı */
+        main {
+            max-width: 850px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Daha derin ve yumuşak gölge */
+        }
+
+        /* Bölüm Başlıkları */
+        main h2 {
+            color: #007acc;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        main h2:first-child {
+            margin-top: 0;
+        }
+
+        /* Sırasız Listeler (Teknik İlgi Alanları) */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            color: #4a5568;
+        }
+
+        ul li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #00c6ff;
+            font-weight: bold;
+        }
+
+        /* Sıralı Listeler (Hobilerim) */
+        ol {
+            padding-left: 20px;
+            color: #4a5568;
+        }
+
+        ol li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+
+        ol li::marker {
+            color: #007acc;
+            font-weight: 600;
+        }
+
+        /* Tanım Listeleri (Favori Teknolojiler) */
+        dl {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #007acc;
+        }
+
+        dt {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        dt:first-child {
+            margin-top: 0;
+        }
+
+        dd {
+            margin: 5px 0 0 0;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Alt Bilgi */
+        footer {
+            background: #1a1a1a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            main {
+                margin: 1.5rem;
+                padding: 1.5rem;
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <h1>İlgi Alanlarım / Hobiler</h1>
+    <h1>İlgi Alanlarım</h1>
 </header>
 
 <nav>
-    <a href="index.html">Ana Sayfa</a> |
-    <a href="about.html">Hakkımda</a> |
-    <a href="interests.html">İlgi Alanlarım</a> |
+    <!-- Menüdeki '|' işaretlerini kaldırdık, hizalamayı CSS Flexbox ile yaptık -->
+    <a href="index.html">Ana Sayfa</a>
+    <a href="about.html">Hakkımda</a>
+    <a href="interests.html">İlgi Alanlarım</a>
     <a href="contact.html">İletişim</a>
 </nav>
 
 <main>
-
     <h2>Teknik İlgi Alanlarım</h2>
     <ul>
-        <li>Web Tasarımı</li>
-        <li>Frontend Geliştirme</li>
-        <li>Backend Mantığı</li>
-        <li>Veritabanı Sistemleri</li>
+        <li>.NET Core ve React.js ile web geliştirme</li>
+        <li>Backend mimarileri ve API tasarımı</li>
+        <li>Veritabanı sistemleri ve optimizasyon</li>
+        <li>ERP/CRM entegrasyon projeleri</li>
+        <li>Yapay Zeka ve Makine Öğrenmesi uygulamaları</li>
+        <li>IoT ve büyük veri çözümleri</li>
     </ul>
 
     <h2>Hobilerim</h2>
     <ol>
-        <li>Kitap okumak</li>
-        <li>Yazılım projeleri geliştirmek</li>
-        <li>Teknoloji videoları izlemek</li>
+        <li>Yeni teknolojiler üzerine araştırma yapmak</li>
+        <li>Kendi yazılım projelerimi geliştirmek</li>
+        <li>Teknoloji ve yazılım topluluklarını takip etmek</li>
+        <li>Kitap okumak ve problem çözme yeteneğini geliştirmek</li>
     </ol>
 
     <h2>Favori Teknolojiler</h2>
     <dl>
-        <dt>HTML</dt>
-        <dd>Web sayfalarının iskeletini oluşturur.</dd>
+        <dt>.NET Core</dt>
+        <dd>Kurumsal uygulamalar için güçlü backend geliştirme altyapısı sağlar.</dd>
 
-        <dt>CSS</dt>
-        <dd>Sayfaların tasarımını ve görünümünü düzenler.</dd>
+        <dt>React.js</dt>
+        <dd>Modern ve dinamik kullanıcı arayüzleri geliştirmeye olanak tanır.</dd>
 
         <dt>JavaScript</dt>
-        <dd>Web sayfalarına etkileşim kazandırır.</dd>
-    </dl>
+        <dd>Web uygulamalarına etkileşim ve dinamik özellikler kazandırır.</dd>
 
+        <dt>SQL</dt>
+        <dd>Veritabanı yönetimi ve veri analizi için temel teknolojidir.</dd>
+    </dl>
 </main>
 
 <footer>
