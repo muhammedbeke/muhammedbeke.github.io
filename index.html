@@ -56,10 +56,9 @@
             height: 60px;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Logo ve linkleri iki yana ayırır */
+            justify-content: space-between;
         }
 
-        /* --- LOGO CSS KISMI EKLENDİ --- */
         .nav-brand {
             display: flex;
             align-items: center;
@@ -83,7 +82,6 @@
             font-weight: 500;
             color: var(--ink-soft);
         }
-        /* ------------------------------- */
 
         .nav-links {
             display: flex;
@@ -325,7 +323,6 @@
 
         @media (max-width: 768px) {
             nav { padding: 0 1rem; }
-            /* Mobilde alan daralacağı için ismi gizleyip sadece logoyu ve linkleri tutabiliriz */
             .nav-name { display: none; }
             .nav-links { gap: 5px; }
             .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
@@ -338,7 +335,6 @@
 <body>
 
 <nav>
-    <!-- LOGO KISMI EKLENDİ -->
     <a href="index.html" class="nav-brand">
         <div class="nav-monogram">ME</div>
         <span class="nav-name">Muhammed Emin Beke</span>
