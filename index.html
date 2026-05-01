@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Emin Beke | Lab Ana Sayfa</title>
+    <title>CSS Temel Ödevi</title>
+    <!-- Tasarımın yazı tiplerini ekledik -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,6 +34,7 @@
             min-height: 100vh;
         }
 
+        /* Arka plan ızgara deseni */
         body::before {
             content: '';
             position: fixed;
@@ -45,6 +48,7 @@
             z-index: 0;
         }
 
+        /* --- ÜST MENÜ (TIPATIP AYNI YAPILDI) --- */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -61,9 +65,9 @@
 
         .nav-links {
             display: flex;
-            flex-wrap: wrap; /* Çok link olunca alt satıra geçmesini sağlar */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px; /* Linkler arası boşluğu artırdık */
+            gap: 15px;
             padding: 10px 0;
         }
 
@@ -82,204 +86,64 @@
             background: var(--rust-light);
         }
 
-        .page {
+        /* --- SAYFA İÇERİĞİ VE YAPISI --- */
+        .page-container {
             position: relative;
             z-index: 1;
-            max-width: 860px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 140px 2rem 80px; /* Menü büyüyebileceği için üst boşluğu artırdık */
+            padding: 140px 2rem 80px; /* Sabit menünün altında kalmaması için üstten boşluk */
         }
 
-        .hero-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 3.5rem 3.5rem 3rem;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-            animation: rise 0.6s cubic-bezier(0.22,1,0.36,1) both;
-        }
-
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 220px; height: 220px;
-            background: radial-gradient(circle at top right, var(--rust-light) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--rust-light);
-            color: var(--rust);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 5px 12px;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-eyebrow::before {
-            content: '';
-            width: 6px; height: 6px;
-            background: var(--rust);
-            border-radius: 50%;
-        }
-
-        .hero-title {
+        header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            font-weight: 900;
+            font-size: 2.5rem;
             color: var(--ink);
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-title em {
-            font-style: normal;
-            color: var(--rust);
-        }
-
-        .hero-desc {
-            color: var(--ink-soft);
-            font-size: 0.975rem;
-            line-height: 1.8;
-            max-width: 500px;
-            margin-bottom: 2.25rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 600;
-            padding: 0.7rem 1.5rem;
-            border-radius: 9px;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
-        }
-
-        .btn:hover { transform: translateY(-2px); }
-
-        .btn-dark {
-            background: var(--ink);
-            color: var(--cream);
-        }
-        .btn-dark:hover { background: #2e2a25; box-shadow: 0 4px 20px rgba(26,23,20,0.2); }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--ink-soft);
-            border: 1px solid var(--border);
-        }
-        .btn-outline:hover { background: var(--cream); border-color: var(--ink-muted); }
-
-        .grid-section {
-            animation: rise 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s both;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             margin-bottom: 1rem;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            font-weight: 700;
+        header p {
             color: var(--ink-soft);
-            white-space: nowrap;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
         }
 
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: var(--border);
+        main {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
         }
 
-        .weeks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 0.875rem;
-        }
-
-        .week-card {
+        /* İçerik ve Sidebar Kutuları */
+        .content {
+            flex: 2;
             background: var(--white);
-            border: 1px solid var(--border);
+            padding: 2rem;
             border-radius: 14px;
-            padding: 1.25rem 1.25rem 1rem;
-            text-decoration: none;
-            display: block;
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
         }
 
-        .week-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--rust), var(--gold));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.25s ease;
+        .sidebar {
+            flex: 1;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
         }
 
-        .week-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--rust-mid);
+        h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--rust);
         }
 
-        .week-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .week-num {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .week-name {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--ink);
-            line-height: 1.3;
-            margin-bottom: 0.25rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .week-sub {
-            font-size: 0.78rem;
-            color: var(--ink-muted);
-            line-height: 1.4;
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--ink-soft);
         }
 
         footer {
@@ -289,112 +153,74 @@
             padding: 2.5rem;
             border-top: 1px solid var(--border);
             color: var(--ink-muted);
-            font-size: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        footer strong { color: var(--ink-soft); font-weight: 600; }
-
-        @keyframes rise {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
+            font-size: 0.85rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
             nav { padding: 0 1rem; }
             .nav-links { gap: 5px; }
             .nav-links a { font-size: 0.8rem; padding: 0.35rem 0.5rem; }
-            .page { padding: 160px 1rem 60px; } /* Mobilde menü alt satıra geçebileceği için üst boşluk eklendi */
-            .hero-card { padding: 2rem 1.5rem; }
-            .weeks-grid { grid-template-columns: 1fr 1fr; }
+            .page-container { padding: 120px 1rem 60px; }
+            main { flex-direction: column; } /* Mobilde yan yana değil alt alta dizecek */
         }
     </style>
 </head>
+
 <body>
 
+<!-- Menü yapısı değiştirilerek tam istediğin hale getirildi ama kendi linklerin eklendi -->
 <nav>
     <div class="nav-links">
         <a href="index.html">Ana Sayfa</a>
-        <a href="about.html">Hakkımda</a>
-        <a href="interests.html">İlgi Alanlarım</a>
-        <a href="hafta2.html">Projelerim</a>
-        <a href="flexbox.html">Flexbox</a>
-        <a href="lab5.html">Lab 5</a>
-        <a href="hafta6-1.html">Hafta 6-1</a>
-        <a href="hafta6-2.html">Hafta 6-2</a>
-        <a href="hafta7.html">Hafta 7</a>
+        <a href="about.html">Hakkında</a>
+        <a href="#">Hizmetler</a>
         <a href="contact.html">İletişim</a>
     </div>
 </nav>
 
-<div class="page">
-
-    <div class="hero-card">
-        <div class="hero-eyebrow">Web Programlama Dersi</div>
-        <h1 class="hero-title">Laboratuvar<br><em>Ana Sayfası</em></h1>
-        <p class="hero-desc">
-            Bu sayfa GitHub Pages üzerinde yayınlanan laboratuvar uygulamalarına giriş için hazırlanmıştır.
-            Aşağıdaki butondan hafta 7 uygulamasına geçebilirsiniz.
+<div class="page-container">
+    <header>
+        <h1>CSS Temel Ödevi</h1>
+        <p>
+            Verilen benzer bir düzende basit bir web sayfası oluşturun. CSS’in temel özelliklerini
+            (display, width, height, margin, padding, border, selector) uygulayın. Sadece HTML5 + CSS3 kullanın.
         </p>
-        <div class="hero-actions">
-            <a href="hafta7.html" class="btn btn-dark">Hafta 7 Uygulamasına Git →</a>
-            <a href="#haftalar" class="btn btn-outline">Diğer Haftalar</a>
-        </div>
-    </div>
+    </header>
 
-    <div class="grid-section" id="haftalar">
-        <div class="section-header">
-            <span class="section-title">Tüm Uygulamalar</span>
-            <div class="section-line"></div>
+    <main>
+        <div class="content">
+            <h2>İçerik</h2>
+            <div class="div-content">
+                <p>
+                    Bu alanda örnek içerik metinleri bulunmaktadır. CSS özellikleri ile metinler
+                    arasında boşluklar ve hizalamalar düzenlenebilir.
+                </p>
+                <p>
+                    Önce CSS ile kutuları yan yana getirmeyi, ardından alt alta yerleştirmeyi
+                    öğrendik. Şimdi ise CSS seçicilerini kullanarak grup ve hiyerarşik seçimler
+                    yapmayı göreceğiz.
+                </p>
+            </div>
         </div>
-        <div class="weeks-grid">
-            <a href="index.html" class="week-card">
-                <div class="week-num">Hafta 1</div>
-                <div class="week-name">Ana Sayfa</div>
-                <div class="week-sub">Sayfa yayınlama</div>
-            </a>
-            <a href="hafta2.html" class="week-card">
-                <div class="week-num">Hafta 2</div>
-                <div class="week-name">Projelerim</div>
-                <div class="week-sub">Temel yapı</div>
-            </a>
-            <a href="contact.html" class="week-card">
-                <div class="week-num">Hafta 3</div>
-                <div class="week-name">İletişim</div>
-                <div class="week-sub">Form & İletişim</div>
-            </a>
-            <a href="flexbox.html" class="week-card">
-                <div class="week-num">Hafta 4</div>
-                <div class="week-name">Flexbox</div>
-                <div class="week-sub">Yerleşim</div>
-            </a>
-            <a href="lab5.html" class="week-card">
-                <div class="week-num">Hafta 5</div>
-                <div class="week-name">Lab 5</div>
-                <div class="week-sub">Konumlandırma</div>
-            </a>
-            <a href="hafta6-1.html" class="week-card">
-                <div class="week-num">Hafta 6 - 1</div>
-                <div class="week-name">Uygulama 1</div>
-                <div class="week-sub">JavaScript</div>
-            </a>
-            <a href="hafta6-2.html" class="week-card">
-                <div class="week-num">Hafta 6 - 2</div>
-                <div class="week-name">Uygulama 2</div>
-                <div class="week-sub">JavaScript</div>
-            </a>
-            <a href="hafta7.html" class="week-card">
-                <div class="week-num">Hafta 7</div>
-                <div class="week-name">Hafta 7</div>
-                <div class="week-sub">Bootstrap + JS</div>
-            </a>
-        </div>
-    </div>
 
+        <aside class="sidebar">
+            <h2>Yan Menü / Bilgi</h2>
+            <p>
+                Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width),
+                yükseklik (height), kenar boşlukları (margin/padding) ve kenarlık
+                (border) özelliklerini kullanabilirsiniz.
+            </p>
+            <p>
+                Öğrendiklerinizi hiyerarşik ve grup seçicilerle uygulayıp farklı
+                bölümlere stil verebilirsiniz.
+            </p>
+        </aside>
+    </main>
 </div>
 
 <footer>
-    <strong>Muhammed Emin Beke</strong> &nbsp;·&nbsp; © 2026
+    <p>© 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS çalışmasıdır.</p>
 </footer>
 
 </body>
