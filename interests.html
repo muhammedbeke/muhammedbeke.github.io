@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlgi Alanlarım | Muhammed Emin Beke</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --cream: #f7f4ef;
+            --white: #ffffff;
             --ink: #1a1714;
             --ink-soft: #4a453f;
             --rust: #c0440a;
@@ -19,7 +19,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            background: #f0f4f8;
+            background: #f0f4f8; 
             color: #333;
             line-height: 1.6;
         }
@@ -81,50 +81,39 @@
             background: var(--rust-light);
         }
 
-        @media (max-width: 768px) {
-            nav { padding: 0 1rem; }
-            .nav-name { display: none; }
-            .nav-links { gap: 5px; }
-            .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
-        }
-
         header {
             background: linear-gradient(135deg, #007acc, #00c6ff);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
             letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         main {
-            max-width: 850px;
-            margin: 3rem auto;
-            padding: 2.5rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
         }
 
-        main h2 {
+        h2 {
             color: #007acc;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-bottom: 8px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 6px;
             border-bottom: 2px solid #e2e8f0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
-        }
-
-        main h2:first-child {
-            margin-top: 0;
         }
 
         ul {
@@ -132,11 +121,12 @@
             padding-left: 0;
         }
 
-        ul li {
+        li {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
+            padding-left: 25px;
+            margin-bottom: 8px;
             color: #4a5568;
+            font-size: 0.95rem;
         }
 
         ul li::before {
@@ -153,18 +143,14 @@
         }
 
         ol li {
-            margin-bottom: 12px;
-            padding-left: 10px;
-        }
-
-        ol li::marker {
-            color: #007acc;
-            font-weight: 600;
+            margin-bottom: 8px;
+            padding-left: 5px;
+            font-size: 0.95rem;
         }
 
         dl {
             background: #f8fafc;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 8px;
             border-left: 4px solid #007acc;
         }
@@ -172,8 +158,8 @@
         dt {
             font-weight: 600;
             color: #0f172a;
-            font-size: 1.1rem;
-            margin-top: 15px;
+            font-size: 1rem;
+            margin-top: 10px;
         }
 
         dt:first-child {
@@ -181,9 +167,9 @@
         }
 
         dd {
-            margin: 5px 0 0 0;
+            margin: 3px 0 0 0;
             color: #64748b;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         footer {
@@ -191,15 +177,16 @@
             color: #94a3b8;
             text-align: center;
             padding: 1.5rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
             font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            main {
-                margin: 1.5rem;
-                padding: 1.5rem;
-            }
+            nav { padding: 0 1rem; }
+            .nav-name { display: none; }
+            .nav-links { gap: 5px; }
+            .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
+            main { margin: 1.5rem 1rem; padding: 1.5rem; }
         }
     </style>
 </head>
@@ -247,13 +234,10 @@
     <dl>
         <dt>.NET Core</dt>
         <dd>Kurumsal uygulamalar için güçlü backend geliştirme altyapısı sağlar.</dd>
-
         <dt>React.js</dt>
         <dd>Modern ve dinamik kullanıcı arayüzleri geliştirmeye olanak tanır.</dd>
-
         <dt>JavaScript</dt>
         <dd>Web uygulamalarına etkileşim ve dinamik özellikler kazandırır.</dd>
-
         <dt>SQL</dt>
         <dd>Veritabanı yönetimi ve veri analizi için temel teknolojidir.</dd>
     </dl>
