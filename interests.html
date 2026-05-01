@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İlgi Alanlarım</title>
-    <!-- Modern bir görünüm için Google Fonts'tan 'Poppins' fontunu ekliyoruz -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>İlgi Alanlarım | Muhammed Emin Beke</title>
+    <!-- Modern bir görünüm için Google Fonts'tan 'Poppins' ve menü için 'Outfit'/'Playfair' fontlarını ekliyoruz -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        /* Menü için gerekli renk değişkenleri */
+        :root {
+            --cream: #f7f4ef;
+            --ink: #1a1714;
+            --ink-soft: #4a453f;
+            --rust: #c0440a;
+            --rust-light: #f5e8e0;
+            --border: #e8e3db;
+        }
+
         /* Genel Ayarlar */
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,6 +25,72 @@
             background: #f0f4f8; /* Daha yumuşak bir arka plan rengi */
             color: #333;
             line-height: 1.6;
+        }
+
+        /* --- Üst Menü (Navigasyon) Stilleri - YENİ TASARIM --- */
+        nav {
+            font-family: 'Outfit', sans-serif;
+            background: rgba(247,244,239,0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2.5rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Sticky veya Fixed özelliği yok, sayfa ile kayacak */
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-monogram {
+            width: 32px; height: 32px;
+            background: var(--ink);
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cream);
+        }
+
+        .nav-name {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+            text-decoration: none;
+            padding: 0.35rem 0.7rem;
+            border-radius: 5px;
+            transition: color 0.15s, background 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: var(--rust);
+            background: var(--rust-light);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 1rem; }
+            .nav-name { display: none; }
+            .nav-links { gap: 5px; }
+            .nav-links a { font-size: 0.75rem; padding: 0.35rem 0.5rem; }
         }
 
         /* Başlık Alanı */
@@ -31,33 +107,6 @@
             font-size: 2.5rem;
             letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        /* Navigasyon (Menü) */
-        nav {
-            background: #1a1a1a;
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Linkler arası boşluk */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            /* Sticky özelliği buradan kaldırıldı */
-        }
-
-        nav a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease, transform 0.2s ease;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        nav a:hover {
-            color: #00c6ff;
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-2px);
         }
 
         /* Ana İçerik Alanı */
@@ -164,25 +213,29 @@
                 margin: 1.5rem;
                 padding: 1.5rem;
             }
-            nav {
-                flex-wrap: wrap;
-            }
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="index.html" class="nav-brand">
+        <div class="nav-monogram">ME</div>
+        <span class="nav-name">Muhammed Emin Beke</span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="about.html">Hakkımda</a>
+        <a href="interests.html">İlgi Alanlarım</a>
+        <a href="contact.html">İletişim</a>
+        <a href="hafta6-1.html">Uygulama 1</a>
+        <a href="hafta6-2.html">Uygulama 2</a>
+    </div>
+</nav>
+
 <header>
     <h1>İlgi Alanlarım</h1>
 </header>
-
-<nav>
-    <!-- Menüdeki '|' işaretlerini kaldırdık, hizalamayı CSS Flexbox ile yaptık -->
-    <a href="index.html">Ana Sayfa</a>
-    <a href="about.html">Hakkımda</a>
-    <a href="interests.html">İlgi Alanlarım</a>
-    <a href="contact.html">İletişim</a>
-</nav>
 
 <main>
     <h2>Teknik İlgi Alanlarım</h2>
